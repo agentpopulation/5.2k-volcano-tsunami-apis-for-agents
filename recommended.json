@@ -1,0 +1,648 @@
+{
+  "pack": "volcano-tsunami-api-endpoints",
+  "title": "Volcano and tsunami API endpoints",
+  "snapshot": "2026-11-15",
+  "tested": {
+    "min": "2026-11-10",
+    "max": "2026-11-15",
+    "text": "10–15 Nov 2026"
+  },
+  "note": "On the date in last_tested (IST), one GET to the URL, sent with no key, returned HTTP 2xx and a non-empty data body. HTML pages and empty results did not pass. The format column records what came back. This is a test result for that date, not a promise that the URL answers today. Licences, terms, rate limits, accuracy and freshness were not reviewed. Endpoints are URLs, not separate APIs; many share one service.",
+  "licence": "CC BY 4.0: credit AgentPopulation and link https://agentpopulation.com",
+  "focus": "title matches /volcan|volcán|vulcan|vulkan|tsunami|tsunamis|eruption|erupci|éruption|lava[ _]?flow|lavaflow|tephra|ash ?fall|caldera|magma|lahar|pyroclast|kilauea|kīlauea|津波|火山/i AND NOT title matches /^NWS (latest observation|zone forecast)/i AND NOT title matches /\\bbirds?\\b|non-volcanic|sulfur-cycle|newer volcanic|bathym|phytoplankt|schematic/i",
+  "buckets": [
+    {
+      "id": "agent",
+      "name": "Agent tools",
+      "title": "Volcano, lahar and tsunami-zone layers an agent can query",
+      "filter": "tags has agent-ready AND title matches /volcan|volcán|vulcan|vulkan|tsunami|tsunamis|eruption|erupci|éruption|lava[ _]?flow|lavaflow|tephra|ash ?fall|caldera|magma|lahar|pyroclast|kilauea|kīlauea|津波|火山/i AND NOT title matches /^NWS (latest observation|zone forecast)/i AND NOT title matches /\\bbirds?\\b|non-volcanic|sulfur-cycle|newer volcanic|bathym|phytoplankt|schematic/i AND NOT url contains \"/erddap/info/\"",
+      "endpoints": 2399,
+      "notes": [
+        "2205 of these are map-layer queries that asked for a few records (resultRecordCount); raise it or page through for the whole layer."
+      ],
+      "criteria": "Services in this pack with the most endpoints that match this bucket and are tagged agent-ready (no key sent in the test call, JSON body, passed a data call). Ties go to the service with more country codes, then by name. Only services with at least one bucket row that matches the focus rule are listed, and the sample comes from those rows; the counts cover the whole bucket. The sample URL is the first row by URL sort after preferring, in this order: rows that match the bucket's sample preference when it has one, rows that return values rather than describe a dataset or a service (not ERDDAP /info/ pages, OGC GetCapabilities requests, bare OWS addresses, PxWeb tables, UN SDG series lists, Statistics Canada download pointers, WorldPop listings, GTFS validation reports, untitled rows or service root addresses), and agent-ready rows. Sample preference in this bucket: NOT url matches ///(services[0-9]*(-[a-z0-9]+)?|utility)\\.arcgis\\.com//i AND title matches /evacuat|hazard|inundation|eruption|lahar/i. Services named \"ArcGIS organization\" hold map layers from many owners and are added only when fewer than 5 other services match.",
+      "services": [
+        {
+          "service": "Doi",
+          "display": "Doi",
+          "host": "doi.org",
+          "endpoints_in_bucket": 107,
+          "endpoints_in_pack": 176,
+          "country_codes": [],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://doi.org/10.5066/F70G3HB8",
+          "sample_title": "Projecting community changes in hazard exposure to support long-term risk reduction: a case study of tsunami hazards in the U.S. Pacific Northwest - Digital Data",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Toronto District School Board (ArcGIS Online)",
+          "display": "Toronto District School Board (ArcGIS Online)",
+          "host": "services2.arcgis.com",
+          "endpoints_in_bucket": 66,
+          "endpoints_in_pack": 67,
+          "country_codes": [
+            "CA"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services2.arcgis.com/PuP9I73SXDqGc9Kp/arcgis/rest/services/Buffer_of_1700_Cascadia_earthquake_and_tsunami_(Disasters)/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "Buffer_of_1700_Cascadia_earthquake_and_tsunami_(Disasters)",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        },
+        {
+          "service": "ArcGIS Online for Ontario Schools (ArcGIS Online)",
+          "display": "ArcGIS Online for Ontario Schools (ArcGIS Online)",
+          "host": "services.arcgis.com",
+          "endpoints_in_bucket": 51,
+          "endpoints_in_pack": 53,
+          "country_codes": [
+            "CA",
+            "FR",
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services.arcgis.com/QI0dObYawrKkuwDp/arcgis/rest/services/100_Buffer_of_World_Volcanoes/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "100_Buffer_of_World_Volcanoes",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Oregon ArcGIS Online (ArcGIS Online)",
+          "display": "Oregon ArcGIS Online (ArcGIS Online)",
+          "host": "services.arcgis.com",
+          "endpoints_in_bucket": 29,
+          "endpoints_in_pack": 29,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/1996_Tsunami_Inundation_Zone_Line/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "1996_Tsunami_Inundation_Zone_Line",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Noaa",
+          "display": "Noaa",
+          "host": "gis.ngdc.noaa.gov",
+          "endpoints_in_bucket": 28,
+          "endpoints_in_pack": 28,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://gis.ngdc.noaa.gov/arcgis/rest/services/web_mercator/hazards/MapServer/1/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "Global Natural Hazards Data - Tsunami Events by Cause/Fatalities",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "NIRD Research Data Archive",
+          "display": "NIRD Research Data Archive",
+          "host": "data.archive.sigma2.no",
+          "endpoints_in_bucket": 19,
+          "endpoints_in_pack": 58,
+          "country_codes": [
+            "NO"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 2,
+          "sample_url": "https://data.archive.sigma2.no/dataset/5e575d76-e7fb-4447-9f65-f5d127bf2234/download/dataset_metadata_10.11582_2025.00010.json",
+          "sample_title": "Arctic warming from a high-latitude effusive volcanic eruption - dataset_metadata",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Stanford University (ArcGIS Online)",
+          "display": "Stanford University (ArcGIS Online)",
+          "host": "services.arcgis.com",
+          "endpoints_in_bucket": 18,
+          "endpoints_in_pack": 23,
+          "country_codes": [
+            "BR",
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services.arcgis.com/7CRlmWNEbeCqEJ6a/ArcGIS/rest/services/volcanoxys/FeatureServer/0/query?where=1%3D1&outFields=*&resultRecordCount=10&f=json",
+          "sample_title": "ArcGIS Online org 7CRlmWNEbeCqEJ6a: volcanoxys",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "MOE-EduGIS (ArcGIS Online)",
+          "display": "MOE-EduGIS (ArcGIS Online)",
+          "host": "services5.arcgis.com",
+          "endpoints_in_bucket": 14,
+          "endpoints_in_pack": 16,
+          "country_codes": [
+            "SG",
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services5.arcgis.com/XqaKEQIgV03geG0E/arcgis/rest/services/8_selected_volcanoes/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "8 selected volcanoes",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "app",
+      "name": "App features",
+      "title": "Tsunami evacuation zones, safe areas and volcanic hazard maps for a safety app",
+      "filter": "title matches /volcan|volcán|vulcan|vulkan|tsunami|tsunamis|eruption|erupci|éruption|lava[ _]?flow|lavaflow|tephra|ash ?fall|caldera|magma|lahar|pyroclast|kilauea|kīlauea|津波|火山/i AND title matches /evacua|inundation|safe (zone|area|location)|assembly|encuentro|encontro|siren|notification|lahar|lava[ _]?flow|lavaflow|volcanic hazard|volcano hazard|hazard (zone|area|line)/i AND NOT url contains \"/erddap/info/\"",
+      "endpoints": 464,
+      "notes": [],
+      "criteria": "Services in this pack with the most endpoints that match this bucket and passed a data call. Ties go to the service with more country codes, then by name. Only services with at least one bucket row that matches the focus rule are listed, and the sample comes from those rows; the counts cover the whole bucket. The sample URL is the first row by URL sort after preferring, in this order: rows that match the bucket's sample preference when it has one, rows that return values rather than describe a dataset or a service (not ERDDAP /info/ pages, OGC GetCapabilities requests, bare OWS addresses, PxWeb tables, UN SDG series lists, Statistics Canada download pointers, WorldPop listings, GTFS validation reports, untitled rows or service root addresses), and agent-ready rows. Sample preference in this bucket: NOT url matches ///(services[0-9]*(-[a-z0-9]+)?|utility)\\.arcgis\\.com//i. Services named \"ArcGIS organization\" hold map layers from many owners and are added only when fewer than 5 other services match.",
+      "services": [
+        {
+          "service": "Usgs",
+          "display": "Usgs",
+          "host": "data.usgs.gov",
+          "endpoints_in_bucket": 70,
+          "endpoints_in_pack": 1767,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "xml"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://data.usgs.gov/datacatalog/metadata/USGS.589110f3e4b072a7ac116b93.xml",
+          "sample_title": "Tsunami Evacuation Travel Time Map for Del Norte County, CA, 2010, for Bridges Intact and a Fast Walking Speed - Original Metadata",
+          "sample_format": "xml",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Stanford University (ArcGIS Online)",
+          "display": "Stanford University (ArcGIS Online)",
+          "host": "services.arcgis.com",
+          "endpoints_in_bucket": 14,
+          "endpoints_in_pack": 23,
+          "country_codes": [
+            "BR",
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services.arcgis.com/7CRlmWNEbeCqEJ6a/arcgis/rest/services/lava_flow_hazard_zones/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "lava_flow_hazard_zones_my",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        },
+        {
+          "service": "Doi",
+          "display": "Doi",
+          "host": "doi.org",
+          "endpoints_in_bucket": 12,
+          "endpoints_in_pack": 176,
+          "country_codes": [],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://doi.org/10.5066/F7862FNT",
+          "sample_title": "Pedestrian evacuation times for employees on the island of O'ahu, Hawai'i, for standard and extreme tsunami evacuation zones by community, modeled at three travel speeds (impaired, slow, and fast walk) - Digital Data",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Porirua City Council (ArcGIS Online)",
+          "display": "Porirua City Council (ArcGIS Online)",
+          "host": "services1.arcgis.com",
+          "endpoints_in_bucket": 9,
+          "endpoints_in_pack": 9,
+          "country_codes": [
+            "NZ"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services1.arcgis.com/kIwRm3UCyRHYbM8a/arcgis/rest/services/Tsunami_Hazard_1000yr_Inundation_Extent_PDP/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "Tsunami Hazard 1000yr Inundation Extent PDP",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        },
+        {
+          "service": "County of Los Angeles (ArcGIS Online)",
+          "display": "County of Los Angeles (ArcGIS Online)",
+          "host": "services.arcgis.com",
+          "endpoints_in_bucket": 8,
+          "endpoints_in_pack": 8,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/LAC_Tsunami_Hazard_Area/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "Los Angeles County Tsunami Hazard Areas",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        },
+        {
+          "service": "ArcGIS Online: Parcels - Honolulu County (Island of Oahu) - GeoJSON",
+          "display": "ArcGIS Online: Parcels - Honolulu County (Island of Oahu) - GeoJSON",
+          "host": "prod-histategis.opendata.arcgis.com",
+          "endpoints_in_bucket": 7,
+          "endpoints_in_pack": 7,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://prod-histategis.opendata.arcgis.com/api/download/v1/items/01ea0d1b26de44438a84581abc0357f8/geojson?layers=13",
+          "sample_title": "Tsunami Safe Zones - GeoJSON",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Oregon ArcGIS Online (ArcGIS Online)",
+          "display": "Oregon ArcGIS Online (ArcGIS Online)",
+          "host": "services.arcgis.com",
+          "endpoints_in_bucket": 7,
+          "endpoints_in_pack": 29,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/1996_Tsunami_Inundation_Zone_Line/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "1996_Tsunami_Inundation_Zone_Line",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "County of Hawaii GIS (ArcGIS Online)",
+          "display": "County of Hawaii GIS (ArcGIS Online)",
+          "host": "services1.arcgis.com",
+          "endpoints_in_bucket": 6,
+          "endpoints_in_pack": 9,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services1.arcgis.com/C2LPusZs5OXNGFDn/arcgis/rest/services/2018_kilauea_lava_flow_lower_east_rift/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "2018_kilauea_lava_flow_lower_east_rift",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        }
+      ]
+    },
+    {
+      "id": "grounding",
+      "name": "Grounding and data pipelines",
+      "title": "Eruption lists, tsunami events, stations and model grids for scheduled loads",
+      "filter": "title matches /volcan|volcán|vulcan|vulkan|tsunami|tsunamis|eruption|erupci|éruption|lava[ _]?flow|lavaflow|tephra|ash ?fall|caldera|magma|lahar|pyroclast|kilauea|kīlauea|津波|火山/i AND title matches /histor|significant|eruptions?\\b|events?\\b|holocene|run ?ups?|marigram|DART|tide station|waterlevel|forecast grids|NEOWAVE|EM-DAT|volcano(es)? of the world|global volcan|world volcan/i",
+      "endpoints": 280,
+      "notes": [],
+      "criteria": "Services in this pack with the most endpoints that match this bucket and passed a data call. Ties go to the service with more country codes, then by name. Only services with at least one bucket row that matches the focus rule are listed, and the sample comes from those rows; the counts cover the whole bucket. The sample URL is the first row by URL sort after preferring, in this order: rows that match the bucket's sample preference when it has one, rows that return values rather than describe a dataset or a service (not ERDDAP /info/ pages, OGC GetCapabilities requests, bare OWS addresses, PxWeb tables, UN SDG series lists, Statistics Canada download pointers, WorldPop listings, GTFS validation reports, untitled rows or service root addresses), and agent-ready rows. Sample preference in this bucket: NOT url contains \"/erddap/info/\" AND NOT url matches ///(services[0-9]*(-[a-z0-9]+)?|utility)\\.arcgis\\.com//i. Services named \"ArcGIS organization\" hold map layers from many owners and are added only when fewer than 5 other services match.",
+      "services": [
+        {
+          "service": "Usgs",
+          "display": "Usgs",
+          "host": "data.usgs.gov",
+          "endpoints_in_bucket": 75,
+          "endpoints_in_pack": 1767,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "xml"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://data.usgs.gov/datacatalog/metadata/USGS.58d01869e4b0236b68f53355.xml",
+          "sample_title": "Wind rose plots for the volcano: 371051 Hromundartindur - Original Metadata",
+          "sample_format": "xml",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Hawaii",
+          "display": "Hawaii",
+          "host": "pae-paha.pacioos.hawaii.edu",
+          "endpoints_in_bucket": 32,
+          "endpoints_in_pack": 64,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 2,
+          "sample_url": "https://pae-paha.pacioos.hawaii.edu/erddap/info/neowave_inundation_agana_tumon/index.json",
+          "sample_title": "ERDDAP PacIOOS: NEOWAVE Regional Tsunami Model: Inundation Maps: Guam: Agana and Tumon Bays",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        },
+        {
+          "service": "NIRD Research Data Archive",
+          "display": "NIRD Research Data Archive",
+          "host": "data.archive.sigma2.no",
+          "endpoints_in_bucket": 24,
+          "endpoints_in_pack": 58,
+          "country_codes": [
+            "NO"
+          ],
+          "formats": [
+            "csv",
+            "json"
+          ],
+          "formats_in_pack": 2,
+          "sample_url": "https://data.archive.sigma2.no/dataset/5e575d76-e7fb-4447-9f65-f5d127bf2234/download/dataset_metadata_10.11582_2025.00010.json",
+          "sample_title": "Arctic warming from a high-latitude effusive volcanic eruption - dataset_metadata",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Doi",
+          "display": "Doi",
+          "host": "doi.org",
+          "endpoints_in_bucket": 19,
+          "endpoints_in_pack": 176,
+          "country_codes": [],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://doi.org/10.5066/F7DN43XR",
+          "sample_title": "GIS shapefiles for Kilauea's episode 61g lava flow, Puu Oo eruption: May 2016 to May 2017 - Digital Data",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Amerigeo",
+          "display": "Amerigeo",
+          "host": "www.amerigeo.org",
+          "endpoints_in_bucket": 6,
+          "endpoints_in_pack": 12,
+          "country_codes": [],
+          "formats": [
+            "csv",
+            "json",
+            "xml"
+          ],
+          "formats_in_pack": 3,
+          "sample_url": "https://www.amerigeo.org/api/download/v1/items/2a45f767a6e549bfbe5bf638681f1fac/geojson?layers=0",
+          "sample_title": "World Volcanoes - GeoJSON",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "NOAA GeoPlatform (ArcGIS Online)",
+          "display": "NOAA GeoPlatform (ArcGIS Online)",
+          "host": "services2.arcgis.com",
+          "endpoints_in_bucket": 5,
+          "endpoints_in_pack": 12,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://services2.arcgis.com/C8EMgrsFcRFL6LrL/arcgis/rest/services/Historical_Marigrams/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "Historical Tsunami Marigrams",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        },
+        {
+          "service": "Noaa",
+          "display": "Noaa",
+          "host": "gis.ngdc.noaa.gov",
+          "endpoints_in_bucket": 5,
+          "endpoints_in_pack": 28,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://gis.ngdc.noaa.gov/arcgis/rest/services/web_mercator/hazards/MapServer/1/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "Global Natural Hazards Data - Tsunami Events by Cause/Fatalities",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Unm",
+          "display": "Unm",
+          "host": "edacarc.unm.edu",
+          "endpoints_in_bucket": 4,
+          "endpoints_in_pack": 4,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json"
+          ],
+          "formats_in_pack": 1,
+          "sample_url": "https://edacarc.unm.edu/arcgis/rest/services/EPSCOR/volcanic_seismic_events/MapServer/0/query?where=1%3D1&outFields=*&resultRecordCount=10&f=json",
+          "sample_title": "edacarc.unm.edu: EPSCOR/volcanic_seismic_events / Volcanic Vent",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        }
+      ]
+    },
+    {
+      "id": "evals",
+      "name": "Evals and testing",
+      "title": "Volcano and tsunami layers, portal records and grids to test a hazard tool",
+      "filter": "the whole pack",
+      "endpoints": 5280,
+      "notes": [],
+      "criteria": "Services in this pack that returned the most different formats, then the most endpoints that passed a data call, then by name: a mix of response shapes to test parsers and tool calls. Only services with at least one bucket row that matches the focus rule are listed, and the sample comes from those rows; the counts cover the whole bucket. The sample URL is the first row by URL sort after preferring, in this order: rows that match the bucket's sample preference when it has one, rows that return values rather than describe a dataset or a service (not ERDDAP /info/ pages, OGC GetCapabilities requests, bare OWS addresses, PxWeb tables, UN SDG series lists, Statistics Canada download pointers, WorldPop listings, GTFS validation reports, untitled rows or service root addresses), and agent-ready rows. Services named \"ArcGIS organization\" hold map layers from many owners and are added only when fewer than 5 other services match.",
+      "services": [
+        {
+          "service": "Cascais",
+          "display": "Cascais",
+          "host": "dadosabertos.cascais.pt",
+          "endpoints_in_bucket": 5,
+          "endpoints_in_pack": 5,
+          "country_codes": [
+            "PT"
+          ],
+          "formats": [
+            "geojson",
+            "csv",
+            "json",
+            "xml"
+          ],
+          "formats_in_pack": 4,
+          "sample_url": "https://dadosabertos.cascais.pt/dataset/74d9d6d3-d12c-4a2e-aa2b-94e8377edc04/resource/f6c7b517-7663-4f7c-bcd9-2db8cfab5036/download/geocascais-pontosencontrotsunami_20261110_175122.geojson",
+          "sample_title": "Pontos de encontro de tsunami",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-12"
+        },
+        {
+          "service": "Amerigeo",
+          "display": "Amerigeo",
+          "host": "www.amerigeo.org",
+          "endpoints_in_bucket": 12,
+          "endpoints_in_pack": 12,
+          "country_codes": [],
+          "formats": [
+            "csv",
+            "json",
+            "xml"
+          ],
+          "formats_in_pack": 3,
+          "sample_url": "https://www.amerigeo.org/api/download/v1/items/2a45f767a6e549bfbe5bf638681f1fac/geojson?layers=0",
+          "sample_title": "World Volcanoes - GeoJSON",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "BNPB Data Catalog",
+          "display": "BNPB Data Catalog",
+          "host": "geoportal.bantulkab.go.id",
+          "endpoints_in_bucket": 5,
+          "endpoints_in_pack": 5,
+          "country_codes": [
+            "ID"
+          ],
+          "formats": [
+            "xml",
+            "zip",
+            "csv"
+          ],
+          "formats_in_pack": 3,
+          "sample_url": "https://geoportal.bantulkab.go.id/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=statistik%3Astk_Jml_kejadian_bencana_tsunami_mnrt_kapanewon&outputFormat=gml2&srs=EPSG%3A4326",
+          "sample_title": "Jumlah Kejadian Bencana Tsunami menurut Kapanewon - stk_Jml_kejadian_bencana_tsunami_mnrt_kapanewon.gml",
+          "sample_format": "xml",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "ArcGIS Online: Vegetation",
+          "display": "ArcGIS Online: Vegetation",
+          "host": "data-cdfw.opendata.arcgis.com",
+          "endpoints_in_bucket": 3,
+          "endpoints_in_pack": 3,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "csv",
+            "json",
+            "xml"
+          ],
+          "formats_in_pack": 3,
+          "sample_url": "https://data-cdfw.opendata.arcgis.com/api/download/v1/items/fd34c0a488b2469a8b582e5214c02cec/geojson?layers=0",
+          "sample_title": "Vegetation - Lassen Volcanic National Park [ds2959] - GeoJSON",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Hawaii",
+          "display": "Hawaii",
+          "host": "pae-paha.pacioos.hawaii.edu",
+          "endpoints_in_bucket": 64,
+          "endpoints_in_pack": 64,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json",
+            "xml"
+          ],
+          "formats_in_pack": 2,
+          "sample_url": "https://pae-paha.pacioos.hawaii.edu/erddap/info/neowave_inundation_agana_tumon/index.json",
+          "sample_title": "ERDDAP PacIOOS: NEOWAVE Regional Tsunami Model: Inundation Maps: Guam: Agana and Tumon Bays",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        },
+        {
+          "service": "NIRD Research Data Archive",
+          "display": "NIRD Research Data Archive",
+          "host": "data.archive.sigma2.no",
+          "endpoints_in_bucket": 58,
+          "endpoints_in_pack": 58,
+          "country_codes": [
+            "NO"
+          ],
+          "formats": [
+            "csv",
+            "json"
+          ],
+          "formats_in_pack": 2,
+          "sample_url": "https://data.archive.sigma2.no/dataset/0276536f-4672-4b42-a9f5-18b120220947/download/dataset_metadata_10.11582_2017.00002.json",
+          "sample_title": "NorESM output prepared for VOLCANOES4FUTURE - NO-VOLC reference experiment - dataset_metadata",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-15"
+        },
+        {
+          "service": "Hawaii",
+          "display": "Hawaii",
+          "host": "geodata.hawaii.gov",
+          "endpoints_in_bucket": 11,
+          "endpoints_in_pack": 11,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json",
+            "xml"
+          ],
+          "formats_in_pack": 2,
+          "sample_url": "https://geodata.hawaii.gov/arcgis/rest/services/Hazards/MapServer/1/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+          "sample_title": "Tsunami Wave Heights",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-14"
+        },
+        {
+          "service": "Lacity",
+          "display": "Lacity",
+          "host": "data.lacity.org",
+          "endpoints_in_bucket": 3,
+          "endpoints_in_pack": 3,
+          "country_codes": [
+            "US"
+          ],
+          "formats": [
+            "json",
+            "xml"
+          ],
+          "formats_in_pack": 2,
+          "sample_url": "https://data.lacity.org/resource/cbxc-q4bc.json?$limit=1",
+          "sample_title": "Tsunami Evacuation Signs",
+          "sample_format": "json",
+          "sample_last_tested": "2026-11-11"
+        }
+      ]
+    }
+  ]
+}

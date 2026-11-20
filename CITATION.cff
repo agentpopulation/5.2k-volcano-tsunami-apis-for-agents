@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this list, please credit it as below."
+type: dataset
+title: "Volcano and tsunami API endpoints"
+authors:
+  - name: AgentPopulation
+    website: "https://agentpopulation.com"
+version: "2026.11.15"
+date-released: 2026-11-15
+license: CC-BY-4.0
+url: "https://agentpopulation.com"
+repository: "https://github.com/agentpopulation/5.2k-volcano-tsunami-apis-for-agents"
+abstract: "5,280 volcano and tsunami API endpoints that passed a keyless data call, tested 10–15 Nov 2026 (IST)."
+keywords:
+  - api-endpoints
+  - open-data
+  - dataset
+  - ai-agents
+  - agent-tools
+  - agentpopulation
+  - volcanoes
+  - volcano-data
+  - tsunami
+  - tsunami-data
+  - natural-hazards
+  - hazard-maps
+  - evacuation-zones
+  - disaster-data
+  - geospatial
+  - erddap
+  - arcgis

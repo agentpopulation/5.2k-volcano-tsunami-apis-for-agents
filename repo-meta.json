@@ -1,0 +1,37 @@
+{
+  "name": "5.2k-volcano-tsunami-apis-for-agents",
+  "old_name": "volcano-tsunami-api-endpoints",
+  "new_name": "5.2k-volcano-tsunami-apis-for-agents",
+  "url": "https://github.com/agentpopulation/5.2k-volcano-tsunami-apis-for-agents",
+  "description": "5,280 volcano and tsunami API endpoints that passed a keyless data call. For agent tools, apps, pipelines and evals. CSV, CC BY 4.0.",
+  "homepage": "https://agentpopulation.com/apis",
+  "topics": [
+    "api-endpoints",
+    "open-data",
+    "dataset",
+    "ai-agents",
+    "agent-tools",
+    "agentpopulation",
+    "volcanoes",
+    "volcano-data",
+    "tsunami",
+    "tsunami-data",
+    "natural-hazards",
+    "hazard-maps",
+    "evacuation-zones",
+    "disaster-data",
+    "geospatial",
+    "erddap",
+    "arcgis"
+  ],
+  "release": {
+    "tag": "snapshot-2026-11-15",
+    "title": "Volcano and tsunami API endpoints · snapshot 15 Nov 2026 · 5,280 endpoints",
+    "notesFile": "RELEASE_NOTES.md",
+    "manifest": "../_release/volcano-tsunami-api-endpoints/release.json",
+    "assets": [
+      "../_release/volcano-tsunami-api-endpoints/Volcano_Tsunami_API_Endpoints_AgentPopulation_Snapshot_2026-11-15.csv.gz",
+      "../_release/volcano-tsunami-api-endpoints/SHA256SUMS.txt"
+    ]
+  }
+}
